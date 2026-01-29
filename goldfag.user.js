@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Золотые переливающиеся Goldфаги
 // @namespace    https://github.com/JeyDerBe/goldfag
-// @version      1.0
+// @version      1.1
 // @description  Скрипт для добавления группе Goldфаги переливающегося золотого цвета
 // @author       JonnyB [https://ru-minecraft.ru/user/JonnyB/]
 // @match        https://ru-minecraft.ru/*
@@ -50,7 +50,7 @@
         function goldfag() {
             document.querySelectorAll('span:not(.goldfaggot)').forEach(span => {
                 const color = getComputedStyle(span).color;
-                if (color === "rgb(222, 180, 11)" || color === "rgb(255, 204, 0)") {
+                if ((color === "rgb(222, 180, 11)" || color === "rgb(255, 204, 0)") && text === "Goldфаги") {
                     span.classList.add("goldfaggot");
                 }
             });
@@ -64,3 +64,4 @@
         });
 
     })();
+
